@@ -1,0 +1,40 @@
+{
+  "_note": "v1.1：所有数字仅用于簇间相对排序，不是财务预测。改动后必须重跑并把快照写进 scored.json（econ_snapshot + hash）。",
+  "day_rate_cny": 1000,
+  "month_ops_cny": 100,
+  "amplify": 300,
+  "reach_cap_ratio": 0.05,
+  "assumed_sub_size": 100000,
+  "assumed_sub_discount": 0.2,
+  "sub_source_discount": 0.8,
+  "_sub_source_discount_note": "抓来的订阅数来自第三方统计站（不是 Reddit 官方 API），统一打 8 折承认其不如官方准。JEV 问「该不该再打折」= 0.59（灰区偏是）→ 保守取 0.8，不叠加到 0.2 折那档（那是「完全未知」）。",
+  "low_conf_discount": 0.5,
+  "_low_conf_discount_note": "单来源 / 源间离散 >15% / 数值可疑的订阅数再打 5 折（JEV choice conf 0.83，p 0.87）。两档叠乘最保守 ≈ 0.4，但触达上限在作者数 <1000 时通常不是瓶颈（paying 先被 authors×300 卡住），所以不会把 ROI 压死。",
+  "sub_size_min_plausible": 5000,
+  "conversion": 0.005,
+  "conversion_by_form": {
+    "web-single-tool": 0.005,
+    "chrome-extension": 0.01,
+    "desktop-tool": 0.003,
+    "saas-with-account": 0.01
+  },
+  "weights": { "O": 0.50, "M": 0.35, "R": 0.15 },
+  "roi_full_at_multiple": 20,
+  "roi_band": { "low": 0.5, "high": 2.0 },
+  "gross_margin": 0.85,
+  "price_usd_by_tier": [3, 9, 25, 60],
+  "usd_cny": 7.1,
+  "person_days_by_form": {
+    "web-single-tool": 1.5,
+    "chrome-extension": 2.0,
+    "desktop-tool": 3.0,
+    "saas-with-account": 12.0
+  },
+  "buyout_months_equivalent": 3,
+  "subscription_by_form": {
+    "web-single-tool": false,
+    "chrome-extension": false,
+    "desktop-tool": false,
+    "saas-with-account": true
+  }
+}

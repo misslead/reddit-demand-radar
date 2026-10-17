@@ -1,0 +1,18 @@
+{
+  "_note": "合规硬约束落成代码常量。改这里等于改合规边界，改完要在 03_工作细节与审核标准.md 同步。",
+  "user_agent": "niche-radar/1.1 (personal demand research; contact u/YOUR_REDDIT_USERNAME)",
+  "reddit_username": "YOUR_REDDIT_USERNAME",
+  "ttl_days": 90,
+  "daily_max_requests": 300,
+  "min_gap_seconds": 5,
+  "session_page_max": 50,
+  "backoff_seconds": [60, 120, 240],
+  "who_max_len": 40,
+  "store_body": false,
+  "store_author": false,
+  "train_on_data": false,
+  "auto_post": false,
+  "browser_executable_path": "C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe",
+  "allowed_hosts": ["www.reddit.com", "old.reddit.com", "reddit.com"],
+  "copy_policy": "对外文案一律自撰，禁止照搬原帖标题或用户原话片段"
+}

@@ -1,0 +1,23 @@
+# 数据与运行时产物（不入库）
+factory.db
+*.db
+*.sqlite
+*.sqlite3
+
+# 抓取原始数据 / 中间结果
+working/
+inbox/
+reports/
+logs/
+tasks/
+review/
+__pycache__/
+*.pyc
+
+# 本地配置与密钥
+.env
+.env.*
+*.key
+*.pem
+secrets/
+config/local.json

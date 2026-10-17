@@ -1,0 +1,849 @@
+{
+  "_note": "48 个 sub 池。v1.1.7：从 24 个扩到 48 个 —— 财务/办公保留一组，新增 24 个『远程可做 + AI 可做』的商业与知识工作领域（营销/电商/开发/设计/内容/房产/保险/医疗行政/翻译/家谱）。关键词只对 browser/oauth provider 有意义，arctic 全量拉取后本地过滤。每 sub 每日最多 3 个关键词、每次 <=25 条。subscribers 由 fetch_sub_sizes.py 从第三方统计站交叉抓取（--apply 落盘），值形如 {n, src, at, raw, spread, low_conf}；未填的按 econ.assumed_sub_size × assumed_sub_discount 兜底。⚠️ v1.1.4 修正：原写成 r/spreadsheet（单数）抓不到，真身是 r/spreadsheets（约 3.9 万）。",
+  "_domain_groups": {
+    "finance_office": [
+      "accounting",
+      "bookkeeping",
+      "QuickBooks",
+      "excel",
+      "googlesheets",
+      "spreadsheets",
+      "Notion",
+      "smallbusiness",
+      "consulting",
+      "realestate"
+    ],
+    "dev_data": [
+      "sysadmin",
+      "homelab",
+      "dataengineering",
+      "webdev",
+      "wordpress",
+      "selfhosted",
+      "linux",
+      "automation",
+      "datascience",
+      "PowerShell"
+    ],
+    "creator_hobby": [
+      "photography",
+      "AskPhotography",
+      "videoediting",
+      "3Dprinting",
+      "MechanicalKeyboards",
+      "Fishing",
+      "boardgames",
+      "modelmakers",
+      "DIY",
+      "podcasting",
+      "musicproduction",
+      "graphicdesign",
+      "UXDesign"
+    ],
+    "business_ops": [
+      "freelance",
+      "digitalmarketing",
+      "SEO",
+      "ecommerce",
+      "shopify",
+      "printondemand",
+      "dropshipping",
+      "copywriting",
+      "contentwriting",
+      "propertymanagement",
+      "insurance",
+      "medicalbilling",
+      "translation",
+      "genealogy",
+      "personalfinance"
+    ]
+  },
+  "_compliance_sensitive_subs": [
+    "medicalbilling",
+    "insurance",
+    "personalfinance",
+    "QuickBooks",
+    "accounting",
+    "tax"
+  ],
+  "subs": {
+    "accounting": [
+      "is there a tool",
+      "i have to manually",
+      "i use excel for"
+    ],
+    "bookkeeping": [
+      "is there a tool",
+      "i have to manually",
+      "i wrote a script"
+    ],
+    "smallbusiness": [
+      "i have to manually",
+      "is there a tool",
+      "i currently use"
+    ],
+    "freelance": [
+      "i made a spreadsheet",
+      "how do i automate",
+      "i have to manually"
+    ],
+    "consulting": [
+      "i have to manually",
+      "my workflow is",
+      "is there a tool"
+    ],
+    "realestate": [
+      "i have to manually",
+      "is there a tool",
+      "copy and paste"
+    ],
+    "photography": [
+      "is there a tool",
+      "i have to manually",
+      "i currently use"
+    ],
+    "videoediting": [
+      "how do i automate",
+      "there has to be a better way",
+      "i wrote a script"
+    ],
+    "excel": [
+      "is there a way to",
+      "i have to manually",
+      "how do i automate"
+    ],
+    "googlesheets": [
+      "is there a way to",
+      "i have to manually",
+      "any app that"
+    ],
+    "Notion": [
+      "is there a tool",
+      "i have to manually",
+      "my workflow is"
+    ],
+    "PowerShell": [
+      "how do i automate",
+      "i wrote a script",
+      "is there a tool"
+    ],
+    "sysadmin": [
+      "i have to manually",
+      "how do i automate",
+      "i wrote a script"
+    ],
+    "dataengineering": [
+      "i have to manually",
+      "is there a tool",
+      "i wrote a script"
+    ],
+    "QuickBooks": [
+      "i have to manually",
+      "is there a tool",
+      "i currently use"
+    ],
+    "spreadsheets": [
+      "is there a way to",
+      "i have to manually",
+      "copy and paste"
+    ],
+    "3Dprinting": [
+      "is there a tool",
+      "i have to manually",
+      "any app that"
+    ],
+    "homelab": [
+      "is there a tool",
+      "how do i automate",
+      "i wrote a script"
+    ],
+    "MechanicalKeyboards": [
+      "is there a tool",
+      "any app that",
+      "i currently use"
+    ],
+    "AskPhotography": [
+      "is there a tool",
+      "i have to manually",
+      "there has to be a better way"
+    ],
+    "Fishing": [
+      "is there a tool",
+      "any app that",
+      "i use excel for"
+    ],
+    "boardgames": [
+      "is there a tool",
+      "i made a spreadsheet",
+      "any app that"
+    ],
+    "modelmakers": [
+      "is there a tool",
+      "i have to manually",
+      "i currently use"
+    ],
+    "DIY": [
+      "is there a tool",
+      "any app that",
+      "i have to manually"
+    ],
+    "digitalmarketing": [
+      "is there a tool",
+      "i have to manually",
+      "how do i automate"
+    ],
+    "SEO": [
+      "is there a tool",
+      "i have to manually",
+      "how do i automate"
+    ],
+    "ecommerce": [
+      "is there a tool",
+      "i have to manually",
+      "my workflow is"
+    ],
+    "shopify": [
+      "is there a tool",
+      "i have to manually",
+      "any app that"
+    ],
+    "printondemand": [
+      "is there a tool",
+      "how do i automate",
+      "i have to manually"
+    ],
+    "dropshipping": [
+      "is there a tool",
+      "i have to manually",
+      "my workflow is"
+    ],
+    "copywriting": [
+      "is there a tool",
+      "i have to manually",
+      "any app that"
+    ],
+    "contentwriting": [
+      "is there a tool",
+      "how do i automate",
+      "i have to manually"
+    ],
+    "webdev": [
+      "is there a tool",
+      "how do i automate",
+      "i wrote a script"
+    ],
+    "wordpress": [
+      "is there a tool",
+      "i have to manually",
+      "how do i automate"
+    ],
+    "selfhosted": [
+      "is there a tool",
+      "how do i automate",
+      "i wrote a script"
+    ],
+    "linux": [
+      "how do i automate",
+      "i wrote a script",
+      "is there a tool"
+    ],
+    "automation": [
+      "is there a tool",
+      "i have to manually",
+      "any app that"
+    ],
+    "datascience": [
+      "is there a tool",
+      "i have to manually",
+      "i wrote a script"
+    ],
+    "podcasting": [
+      "is there a tool",
+      "i have to manually",
+      "how do i automate"
+    ],
+    "musicproduction": [
+      "is there a tool",
+      "i have to manually",
+      "any app that"
+    ],
+    "graphicdesign": [
+      "is there a tool",
+      "i have to manually",
+      "there has to be a better way"
+    ],
+    "UXDesign": [
+      "is there a tool",
+      "how do i automate",
+      "i have to manually"
+    ],
+    "propertymanagement": [
+      "is there a tool",
+      "i have to manually",
+      "my workflow is"
+    ],
+    "insurance": [
+      "is there a tool",
+      "i have to manually",
+      "any app that"
+    ],
+    "medicalbilling": [
+      "is there a tool",
+      "i have to manually",
+      "how do i automate"
+    ],
+    "translation": [
+      "is there a tool",
+      "i have to manually",
+      "any app that"
+    ],
+    "genealogy": [
+      "is there a tool",
+      "i have to manually",
+      "how do i research"
+    ],
+    "personalfinance": [
+      "is there a tool",
+      "i have to manually",
+      "any app that"
+    ]
+  },
+  "subscribers": {
+    "accounting": {
+      "n": 1270916,
+      "src": "reddifier",
+      "at": "2026-10-05",
+      "raw": {
+        "reddifier": 1270916
+      },
+      "spread": 0.0,
+      "suspect_high": false,
+      "low_conf": true
+    },
+    "smallbusiness": {
+      "n": 2504038,
+      "src": "gummysearch+reddifier",
+      "at": "2026-10-05",
+      "raw": {
+        "gummysearch": 2500000,
+        "reddifier": 2508076
+      },
+      "spread": 0.003,
+      "suspect_high": false,
+      "low_conf": false
+    },
+    "freelance": {
+      "n": 701000,
+      "src": "gummysearch",
+      "at": "2026-10-05",
+      "raw": {
+        "gummysearch": 701000
+      },
+      "spread": 0.0,
+      "suspect_high": false,
+      "low_conf": true
+    },
+    "consulting": {
+      "n": 386000,
+      "src": "gummysearch",
+      "at": "2026-10-05",
+      "raw": {
+        "gummysearch": 386000
+      },
+      "spread": 0.0,
+      "suspect_high": false,
+      "low_conf": true
+    },
+    "realestate": {
+      "n": 2504516,
+      "src": "reddifier",
+      "at": "2026-10-05",
+      "raw": {
+        "reddifier": 2504516
+      },
+      "spread": 0.0,
+      "suspect_high": false,
+      "low_conf": true
+    },
+    "photography": {
+      "n": 5667335,
+      "src": "gummysearch+reddifier",
+      "at": "2026-10-05",
+      "raw": {
+        "gummysearch": 5700000,
+        "reddifier": 5634671
+      },
+      "spread": 0.012,
+      "suspect_high": false,
+      "low_conf": false
+    },
+    "excel": {
+      "n": 894435,
+      "src": "gummysearch+reddifier",
+      "at": "2026-10-05",
+      "raw": {
+        "gummysearch": 899000,
+        "reddifier": 889871
+      },
+      "spread": 0.01,
+      "suspect_high": false,
+      "low_conf": false
+    },
+    "googlesheets": {
+      "n": 85676,
+      "src": "gummysearch+reddifier",
+      "at": "2026-10-05",
+      "raw": {
+        "gummysearch": 87000,
+        "reddifier": 84353
+      },
+      "spread": 0.031,
+      "suspect_high": false,
+      "low_conf": false
+    },
+    "Notion": {
+      "n": 469732,
+      "src": "gummysearch+reddifier",
+      "at": "2026-10-05",
+      "raw": {
+        "gummysearch": 473000,
+        "reddifier": 466464
+      },
+      "spread": 0.014,
+      "suspect_high": false,
+      "low_conf": false
+    },
+    "PowerShell": {
+      "n": 309000,
+      "src": "gummysearch",
+      "at": "2026-10-05",
+      "raw": {
+        "gummysearch": 309000
+      },
+      "spread": 0.0,
+      "suspect_high": false,
+      "low_conf": true
+    },
+    "sysadmin": {
+      "n": 1303028,
+      "src": "gummysearch+reddifier",
+      "at": "2026-10-05",
+      "raw": {
+        "gummysearch": 1300000,
+        "reddifier": 1306056
+      },
+      "spread": 0.005,
+      "suspect_high": false,
+      "low_conf": false
+    },
+    "dataengineering": {
+      "n": 481000,
+      "src": "gummysearch",
+      "at": "2026-10-05",
+      "raw": {
+        "gummysearch": 481000
+      },
+      "spread": 0.0,
+      "suspect_high": false,
+      "low_conf": true
+    },
+    "QuickBooks": {
+      "n": 42000,
+      "src": "gummysearch",
+      "at": "2026-10-05",
+      "raw": {
+        "gummysearch": 42000
+      },
+      "spread": 0.0,
+      "suspect_high": false,
+      "low_conf": true
+    },
+    "spreadsheets": {
+      "n": 41000,
+      "src": "gummysearch",
+      "at": "2026-10-05",
+      "raw": {
+        "gummysearch": 41000
+      },
+      "spread": 0.0,
+      "suspect_high": false,
+      "low_conf": true
+    },
+    "3Dprinting": {
+      "n": 3400000,
+      "src": "gummysearch",
+      "at": "2026-10-05",
+      "raw": {
+        "gummysearch": 3400000
+      },
+      "spread": 0.0,
+      "suspect_high": false,
+      "low_conf": true
+    },
+    "homelab": {
+      "n": 1079863,
+      "src": "gummysearch+reddifier",
+      "at": "2026-10-05",
+      "raw": {
+        "gummysearch": 1100000,
+        "reddifier": 1059726
+      },
+      "spread": 0.037,
+      "suspect_high": false,
+      "low_conf": false
+    },
+    "MechanicalKeyboards": {
+      "n": 1400000,
+      "src": "gummysearch",
+      "at": "2026-10-05",
+      "raw": {
+        "gummysearch": 1400000
+      },
+      "spread": 0.0,
+      "suspect_high": false,
+      "low_conf": true
+    },
+    "AskPhotography": {
+      "n": 760000,
+      "src": "gummysearch",
+      "at": "2026-10-05",
+      "raw": {
+        "gummysearch": 760000
+      },
+      "spread": 0.0,
+      "suspect_high": false,
+      "low_conf": true
+    },
+    "Fishing": {
+      "n": 3100000,
+      "src": "gummysearch",
+      "at": "2026-10-05",
+      "raw": {
+        "gummysearch": 3100000
+      },
+      "spread": 0.0,
+      "suspect_high": false,
+      "low_conf": true
+    },
+    "boardgames": {
+      "n": 5469683,
+      "src": "gummysearch+reddifier",
+      "at": "2026-10-05",
+      "raw": {
+        "gummysearch": 5500000,
+        "reddifier": 5439366
+      },
+      "spread": 0.011,
+      "suspect_high": false,
+      "low_conf": false
+    },
+    "modelmakers": {
+      "n": 333292,
+      "src": "gummysearch+reddifier",
+      "at": "2026-10-05",
+      "raw": {
+        "gummysearch": 336000,
+        "reddifier": 330584
+      },
+      "spread": 0.016,
+      "suspect_high": false,
+      "low_conf": false
+    },
+    "DIY": {
+      "n": 27486394,
+      "src": "gummysearch+reddifier",
+      "at": "2026-10-05",
+      "raw": {
+        "gummysearch": 27500000,
+        "reddifier": 27472788
+      },
+      "spread": 0.001,
+      "suspect_high": false,
+      "low_conf": false
+    },
+    "bookkeeping": {
+      "n": 75682,
+      "src": "redpulse",
+      "at": "2026-10-05",
+      "raw": {
+        "redpulse": 75682
+      },
+      "spread": 0.0,
+      "suspect_high": false,
+      "low_conf": true
+    },
+    "videoediting": {
+      "n": 501263,
+      "src": "redpulse",
+      "at": "2026-10-05",
+      "raw": {
+        "redpulse": 501263
+      },
+      "spread": 0.0,
+      "suspect_high": false,
+      "low_conf": true
+    },
+    "digitalmarketing": {
+      "n": 410906,
+      "src": "reddifier+redpulse",
+      "at": "2026-10-05",
+      "raw": {
+        "reddifier": 443319,
+        "redpulse": 378494
+      },
+      "spread": 0.158,
+      "suspect_high": false,
+      "low_conf": true
+    },
+    "SEO": {
+      "n": 499200,
+      "src": "gummysearch+reddifier+redpulse",
+      "at": "2026-10-05",
+      "raw": {
+        "gummysearch": 515000,
+        "reddifier": 499200,
+        "redpulse": 465490
+      },
+      "spread": 0.099,
+      "suspect_high": false,
+      "low_conf": false
+    },
+    "ecommerce": {
+      "n": 662566,
+      "src": "gummysearch+reddifier+redpulse",
+      "at": "2026-10-05",
+      "raw": {
+        "gummysearch": 681000,
+        "reddifier": 662566,
+        "redpulse": 622338
+      },
+      "spread": 0.089,
+      "suspect_high": false,
+      "low_conf": false
+    },
+    "shopify": {
+      "n": 367430,
+      "src": "gummysearch+reddifier+redpulse",
+      "at": "2026-10-05",
+      "raw": {
+        "gummysearch": 380000,
+        "reddifier": 367430,
+        "redpulse": 343148
+      },
+      "spread": 0.1,
+      "suspect_high": false,
+      "low_conf": false
+    },
+    "printondemand": {
+      "n": 52786,
+      "src": "gummysearch+reddifier+redpulse",
+      "at": "2026-10-05",
+      "raw": {
+        "gummysearch": 54000,
+        "reddifier": 52786,
+        "redpulse": 48661
+      },
+      "spread": 0.101,
+      "suspect_high": false,
+      "low_conf": false
+    },
+    "dropshipping": {
+      "n": 276367,
+      "src": "gummysearch+reddifier+redpulse",
+      "at": "2026-10-05",
+      "raw": {
+        "gummysearch": 291000,
+        "reddifier": 276367,
+        "redpulse": 243166
+      },
+      "spread": 0.173,
+      "suspect_high": false,
+      "low_conf": true
+    },
+    "copywriting": {
+      "n": 258912,
+      "src": "gummysearch+reddifier+redpulse",
+      "at": "2026-10-05",
+      "raw": {
+        "gummysearch": 263000,
+        "reddifier": 258912,
+        "redpulse": 250044
+      },
+      "spread": 0.05,
+      "suspect_high": false,
+      "low_conf": false
+    },
+    "webdev": {
+      "n": 3285801,
+      "src": "gummysearch+reddifier+redpulse",
+      "at": "2026-10-05",
+      "raw": {
+        "gummysearch": 3300000,
+        "reddifier": 3285801,
+        "redpulse": 3209816
+      },
+      "spread": 0.027,
+      "suspect_high": false,
+      "low_conf": false
+    },
+    "wordpress": {
+      "n": 303695,
+      "src": "reddifier+redpulse",
+      "at": "2026-10-05",
+      "raw": {
+        "reddifier": 310252,
+        "redpulse": 297139
+      },
+      "spread": 0.043,
+      "suspect_high": false,
+      "low_conf": false
+    },
+    "selfhosted": {
+      "n": 807530,
+      "src": "gummysearch+reddifier+redpulse",
+      "at": "2026-10-05",
+      "raw": {
+        "gummysearch": 851000,
+        "reddifier": 807530,
+        "redpulse": 724594
+      },
+      "spread": 0.157,
+      "suspect_high": false,
+      "low_conf": true
+    },
+    "linux": {
+      "n": 1869607,
+      "src": "gummysearch+redpulse",
+      "at": "2026-10-05",
+      "raw": {
+        "gummysearch": 1900000,
+        "redpulse": 1839215
+      },
+      "spread": 0.033,
+      "suspect_high": false,
+      "low_conf": false
+    },
+    "automation": {
+      "n": 222932,
+      "src": "gummysearch+reddifier+redpulse",
+      "at": "2026-10-05",
+      "raw": {
+        "gummysearch": 236000,
+        "reddifier": 222932,
+        "redpulse": 193706
+      },
+      "spread": 0.19,
+      "suspect_high": false,
+      "low_conf": true
+    },
+    "datascience": {
+      "n": 2765724,
+      "src": "gummysearch+redpulse",
+      "at": "2026-10-05",
+      "raw": {
+        "gummysearch": 2800000,
+        "redpulse": 2731449
+      },
+      "spread": 0.025,
+      "suspect_high": false,
+      "low_conf": false
+    },
+    "podcasting": {
+      "n": 187717,
+      "src": "gummysearch+reddifier+redpulse",
+      "at": "2026-10-05",
+      "raw": {
+        "gummysearch": 193000,
+        "reddifier": 187717,
+        "redpulse": 175835
+      },
+      "spread": 0.091,
+      "suspect_high": false,
+      "low_conf": false
+    },
+    "musicproduction": {
+      "n": 602986,
+      "src": "gummysearch+reddifier+redpulse",
+      "at": "2026-10-05",
+      "raw": {
+        "gummysearch": 614000,
+        "reddifier": 602986,
+        "redpulse": 576349
+      },
+      "spread": 0.062,
+      "suspect_high": false,
+      "low_conf": false
+    },
+    "UXDesign": {
+      "n": 244503,
+      "src": "gummysearch+reddifier+redpulse",
+      "at": "2026-10-05",
+      "raw": {
+        "gummysearch": 251000,
+        "reddifier": 244503,
+        "redpulse": 228889
+      },
+      "spread": 0.09,
+      "suspect_high": false,
+      "low_conf": false
+    },
+    "propertymanagement": {
+      "n": 58768,
+      "src": "redpulse",
+      "at": "2026-10-05",
+      "raw": {
+        "redpulse": 58768
+      },
+      "spread": 0.0,
+      "suspect_high": false,
+      "low_conf": true
+    },
+    "insurance": {
+      "n": 224625,
+      "src": "reddifier+redpulse",
+      "at": "2026-10-05",
+      "raw": {
+        "reddifier": 232146,
+        "redpulse": 217105
+      },
+      "spread": 0.067,
+      "suspect_high": false,
+      "low_conf": false
+    },
+    "translation": {
+      "n": 12000,
+      "src": "gummysearch",
+      "at": "2026-10-05",
+      "raw": {
+        "gummysearch": 12000
+      },
+      "spread": 0.0,
+      "suspect_high": false,
+      "low_conf": true
+    },
+    "genealogy": {
+      "n": 193604,
+      "src": "redpulse",
+      "at": "2026-10-05",
+      "raw": {
+        "redpulse": 193604
+      },
+      "spread": 0.0,
+      "suspect_high": false,
+      "low_conf": true
+    },
+    "personalfinance": {
+      "n": 21786737,
+      "src": "gummysearch+reddifier+redpulse",
+      "at": "2026-10-05",
+      "raw": {
+        "gummysearch": 21900000,
+        "reddifier": 21786737,
+        "redpulse": 21616266
+      },
+      "spread": 0.013,
+      "suspect_high": false,
+      "low_conf": false
+    }
+  }
+}
